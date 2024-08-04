@@ -10,7 +10,7 @@ This script calculates the total value of CSGO cases based on current market pri
 
 1. Clone the repository:
    ```sh
-    git clone {link_here}
+    git clone https://github.com/seanieStack/CS2CasePricer.git
     cd csgo-case-value-calculator
    
     pip install -r requirements.txt
