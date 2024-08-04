@@ -21,6 +21,10 @@ def fetch_price(case, amount):
         response = get(f"https://csfloat.com/api/v1/listings?market_hash_name={case}&sort_by=lowest_price&limit=5",
                        headers={"Authorization": f"{API_KEY}"})
 
+        if response.status_code == 403:
+            logging.error("Please get api key from https://csfloat.com/profile")
+            exit(1)
+
         if response.status_code != 200:
             logging.error(f"Failed to fetch data for {unquote(case)}: {response.status_code}")
             return 0
